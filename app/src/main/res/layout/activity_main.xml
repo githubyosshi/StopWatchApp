@@ -37,7 +37,32 @@
         android:id="@+id/timerLabel"
         android:layout_height="0dp" />
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_weight="1"
-        android:layout_height="0dp"></LinearLayout>
+        android:orientation="horizontal"
+        android:layout_height="0dp">
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Start"
+            android:id="@+id/startButton"
+            android:onClick="startTimer"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Stop"
+            android:id="@+id/stopButton"
+            android:onClick="stopTimer"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Reset"
+            android:id="@+id/resetButton"
+            android:onClick="resetTimer"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
 </LinearLayout>
