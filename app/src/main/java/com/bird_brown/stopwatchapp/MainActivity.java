@@ -60,8 +60,11 @@ public class MainActivity extends ActionBarActivity {
                 long t = SystemClock.elapsedRealtime() - startTime; // ミリ秒
                 SimpleDateFormat sdf = new SimpleDateFormat("mm:ss.SSS", Locale.US);
                 timerLabel.setText(sdf.format(t));
+                handler.removeCallbacks(updateTimer);
+                handler.postDelayed(updateTimer, 10);
             }
         };
+        handler.postDelayed(updateTimer, 10);
 
         // ボタンの操作
         setButtonState(false,true,false);
