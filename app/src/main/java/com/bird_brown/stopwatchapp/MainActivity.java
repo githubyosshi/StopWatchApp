@@ -18,6 +18,7 @@ import java.util.Locale;
 public class MainActivity extends ActionBarActivity {
 
     private long startTime;
+    private long elapsedTime = 0l;
 
     private Handler handler = new Handler();
     private Runnable updateTimer;
@@ -57,7 +58,7 @@ public class MainActivity extends ActionBarActivity {
         updateTimer = new Runnable() {
             @Override
             public void run() {
-                long t = SystemClock.elapsedRealtime() - startTime; // ミリ秒
+                long t = SystemClock.elapsedRealtime() - startTime + elapsedTime; // ミリ秒
                 SimpleDateFormat sdf = new SimpleDateFormat("mm:ss.SSS", Locale.US);
                 timerLabel.setText(sdf.format(t));
                 handler.removeCallbacks(updateTimer);
@@ -69,5 +70,10 @@ public class MainActivity extends ActionBarActivity {
         // ボタンの操作
         setButtonState(false,true,false);
 
+    }
+    public void stopTimer(View view) {
+        elapsedTime += SystemClock.elapsedRealtime() - startTime;
+        handler.removeCallbacks(updateTimer);
+        setButtonState(true,false,true);
     }
 }
