@@ -76,4 +76,11 @@ public class MainActivity extends ActionBarActivity {
         handler.removeCallbacks(updateTimer);
         setButtonState(true,false,true);
     }
+
+    public void resetTimer(View view) {
+        elapsedTime = 0l;
+//        timerLabel.setText("00:00.000");
+        timerLabel.setText(R.string.timer_label);
+        setButtonState(true,false,false);
+    }
 }
