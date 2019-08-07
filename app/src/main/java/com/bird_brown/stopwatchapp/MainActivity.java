@@ -1,6 +1,7 @@
 package com.bird_brown.stopwatchapp;
 
 //import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v7.app.ActionBarActivity;
@@ -13,7 +14,6 @@ import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;
-
 
 public class MainActivity extends ActionBarActivity {
 
@@ -41,6 +41,7 @@ public class MainActivity extends ActionBarActivity {
 //        startButton.setEnabled(true);
 //        stopButton.setEnabled(false);
 //        resetButton.setEnabled(false);
+        
         setButtonState(true, false,false);
 
     }
@@ -64,7 +65,7 @@ public class MainActivity extends ActionBarActivity {
                 handler.removeCallbacks(updateTimer);
                 handler.postDelayed(updateTimer, 10);
             }
-        };
+        }
         handler.postDelayed(updateTimer, 10);
 
         // ボタンの操作
